@@ -142,6 +142,7 @@ footer p {
     font-size: 64px;
     font-weight: normal;
     text-align: center;
+    margin: 0;
 }
 
 form {

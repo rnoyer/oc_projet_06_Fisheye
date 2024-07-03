@@ -25,6 +25,15 @@ async function init() {
   
   // Affiche le Portfolio
   displayPortfolio(photographerName, MediaInfos);
+
+//------------------//
+//     FOOTER       //
+//------------------//
+
+  const likes = await getSumOfLikesById(pathToData, photographerId)
+  const price = await getPriceById(pathToData, photographerId)
+  displayPortfolioFooter(likes,price)
+
 }
 
 init();

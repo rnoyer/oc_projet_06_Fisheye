@@ -5,7 +5,7 @@ async function getMediasData(path) {
     return media;
 }
 
-// Récupère tous les medias d'un photographe avec son ID
+// Retourne tous les medias d'un photographe (En utilisant son ID)
 async function getMediasDataById(path, id) {
     const mediasData = await getMediasData(path)
     const mediasDataById = mediasData.filter((media) => media.photographerId === id);
@@ -13,8 +13,17 @@ async function getMediasDataById(path, id) {
     return mediasDataById
 }
 
-// Récupère la somme de tous les likes
 
+
+// Retourne la somme de tous les likes d'un photographe (En utilisant son ID)
+async function getSumOfLikesById(path, id) {
+    const mediasData = await getMediasData(path)
+    const mediasDataById = mediasData.filter((media) => media.photographerId === id);
+    const listOfLikes = mediasDataById.map(likeNb => likeNb.likes);
+    const sumOfLikes = listOfLikes.reduce((accumulator, currentValue) => accumulator + currentValue)
+    // TO DO : gérer les erreurs > find ne trouve pas l'ID
+    return sumOfLikes
+}
 
 
 

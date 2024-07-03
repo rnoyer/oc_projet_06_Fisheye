@@ -6,13 +6,12 @@ function photographerCardTemplate(data) {
     function getUserCardDOM() {
       const url = `./photographer.html?id=${id}`;
       const article = document.createElement( 'article' );
-      const labelAria = `Visiter le portfolio de ${name}`;
+      const labelAria = `${name}`;
       const profileLink = document.createElement('a');
       profileLink.setAttribute("href",url);
       profileLink.setAttribute("aria-label",labelAria)
       const img = document.createElement( 'img' );
       img.setAttribute("src", picture);
-      img.setAttribute("alt", name)
       const photographerName = document.createElement( 'h2' );
       photographerName.textContent = name;
       const location = document.createElement('p');

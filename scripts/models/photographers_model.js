@@ -5,14 +5,14 @@ async function getPhotographersData(path) {
     return photographers;
 }
 
-// Récupère l'ID d'un photographe
+// Retourne l'ID d'un photographe
 function getPhotographerQueriedId(){
     const params = new URLSearchParams(document.location.search);
     const userID = parseInt(params.get("id"), 10);
     return userID
 }
 
-// Récupère les infos d'un photographe avec son ID
+// Retourne les infos d'un photographe (En utilisant son ID)
 async function getPhotographerDataById(path, id) {
     const data = await getPhotographersData(path)
     const photographerDataById = data.find((photographer) => photographer.id === id);
@@ -20,9 +20,16 @@ async function getPhotographerDataById(path, id) {
     return photographerDataById
 }
 
-// Récupère le nom d'un photographe avec son ID
+// Retourne le nom d'un photographe (En utilisant son ID)
 async function getPhotographerNameById(path, id) {
     const data = await getPhotographerDataById(path, id)
     const photographerNameById = data.name
     return photographerNameById
+}
+
+// Retourne le taux journalier d'un photographe (En utilisant son ID)
+async function getPriceById(path, id){
+    const data = await getPhotographerDataById(path, id)
+    const price = data.price
+    return price
 }

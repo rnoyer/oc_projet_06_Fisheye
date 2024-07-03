@@ -38,8 +38,4 @@ async function displayPortfolio(photographerName, mediasList) {
         const mediaCardDOM = mediaCard.getMediaCardDOM();
         mediaSection.appendChild(mediaCardDOM);
     });
-
-    // TODO : Afficher le footer
-    // <p>297 081 <i class="fa-solid fa-heart"></i></p>
-    // <p>300€ / jour</p>
   }
