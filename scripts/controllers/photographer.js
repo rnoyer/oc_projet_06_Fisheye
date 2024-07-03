@@ -34,6 +34,12 @@ async function init() {
   const price = await getPriceById(pathToData, photographerId)
   displayPortfolioFooter(likes,price)
 
+//------------------//
+//   FORMULAIRE     //
+//------------------//
+
+  displayNameInModal(photographerName)
+
 }
 
 init();

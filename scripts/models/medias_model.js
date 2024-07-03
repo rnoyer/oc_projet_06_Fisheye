@@ -27,27 +27,6 @@ async function getSumOfLikesById(path, id) {
 
 
 
-// User sur le front qui clic sur un lien
-// Ca vient dans le "router" --> Controller
-
-// Je controle le formulaire ou les query params (?id=1)
-// Je récupère les datas via les models
-// Je prepare ma reponse grace aux views
-
-
-
-// Model       --> En charge de récuperer/filtrer/update la données
-// View
-// Controller
-
-
-
-
-
-
-
-// récuperer les infos d'un photographe
-// récupérer toutes les photos d'un photographe
 
 // Trier les photos par popularité
 // Trier les photos par Date
