@@ -1,11 +1,124 @@
-#contact_modal {
-    display: none;
+h1 {
+    margin: unset;
+}
+
+p {
+    color: #901C1C;
+    font-size: 24px;
+    margin: 0;
 }
 
 .photograph-header {
-    background-color: #FAFAFA;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    background-color:  rgb(223, 167, 167);
     height: 300px;
-    margin: 0 100px;
+    padding: 0 50px;
+    gap: 50px;
+}
+
+.photographer-infos{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.header-name {
+    color: #D3573C;
+    font-size: 64px;
+    font-weight: 400;
+}
+
+.header-tagline {
+    color: #525252;
+    font-size: 18px;
+}
+
+.photograph-header img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.photograph-portfolio {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    margin-top: 100px;
+    gap: 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 350px;
+}
+
+.thumbnail {
+    width: 350px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.card-body{
+    display: flex;
+    justify-content: space-between;
+    margin: auto 0;
+}
+
+.likes{
+    display: flex;
+    gap: 5px;
+    align-items: baseline;
+}
+
+#footer {
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    background-color: #DB8876;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 0 20px;
+    height: 75px;
+    margin: 0 50px;
+    border-radius: 5px 5px 0 0;
+    gap: 100px;
+}
+footer p {
+    color: black;
+    font-weight: 500;
+}
+
+#contact_modal {
+    display: none;
+    background: #C4C4C466;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+
+.modal {
+    position: relative;
+    border-radius: 5px;
+    background-color: #DB8876;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px;
+    margin: 50px auto;
+}
+
+.modal header {
+    justify-content: space-between;
+    width: 100%;
 }
 
 .contact_button {
@@ -19,23 +132,6 @@
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
-}
-
-.modal {
-    border-radius: 5px;
-    background-color: #DB8876;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 35px;
-    margin: auto;
-}
-
-.modal header {
-    justify-content: space-between;
-    width: 100%;
 }
 
 .modal header img {

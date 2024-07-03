@@ -2,49 +2,83 @@
 
 body {
     font-family: "DM Sans", sans-serif;
-    margin: 0;
+    margin: 0 100px;
+    font-family: "DM Sans", sans-serif;
 }
-
 
 header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 90px;
+    padding: 43px 0;
 }
 
+main {
+    margin: 50px 0;
+}
 h1 {
     color: #901C1C;
-    margin-right: 100px;
+    font-weight: 400;
 }
 
 .logo {
     height: 50px;
-    margin-left: 100px;
+    margin-left: 0 50px;
 }
 
 .photographer_section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 70px;
-    margin-top: 100px;
+    width: 100%;
 }
 
 .photographer_section article {
-    justify-self: center;
     display: flex;
-    justify-content: center;
+    flex-direction: column; 
     align-items: center;
+}
+
+.photographer_section article a {
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    text-decoration: none;
 }
 
 .photographer_section article h2 {
     color: #D3573C;
     font-size: 36px;
+    font-weight: 400;
+    text-align: center;
+    margin: 15px 0 0;
 }
 
 .photographer_section article img {
     height: 200px;
     width: 200px;
+    object-fit: cover;
+    border-radius: 100%;
+    object-fit: cover;
+    box-shadow: 0 4px 12px #00000040;
+}
+
+.photographer_section article p {
+    margin: unset;
+    margin-bottom: 5px;
+}
+
+.location {
+    font-size: 13px;
+    color: #901C1C;
+}
+
+.tagline {
+    font-size: 10px;
+}
+
+.pricing {
+    font-size: 9px;
+    color: #757575;
 }
