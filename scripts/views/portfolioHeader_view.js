@@ -6,6 +6,7 @@ function headerTemplate(data) {
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture)
         img.setAttribute("alt", name)
+        img.setAttribute("tabindex","0")
 
         return (img)
     }
@@ -25,6 +26,7 @@ function headerTemplate(data) {
 
         const infoDiv = document.createElement( 'div' );
         infoDiv.className = "photographer-infos"
+        infoDiv.setAttribute("tabindex","0")
         infoDiv.append(h1, location, pTagline);
         return (infoDiv);
     }

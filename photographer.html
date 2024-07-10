@@ -11,46 +11,80 @@
 </head>
 
 <body>
-  <div id="contact_modal">
-    <div class="modal-background"></div>
-    <div class="modal">
+  <dialog id="lightbox-modal" class="content" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+    <div class="lightbox-modal-background" onclick="closeLightboxModal()" tabindex="-1"></div>
+    <div id="lightbox-modal-container">
+      <button type="button" aria-label="Previous media" onclick="previousMedia()">
+        <img src="assets/icons/previous.svg" alt=""/>
+      </button>
+      <button type="button" aria-label="Next media" onclick="nextMedia()">
+        <img src="assets/icons/next.svg" alt=""/>
+      </button>
+      <button type="button" aria-label="Close displayed media" onclick="closeLightboxModal()">
+        <img src="assets/icons/closeDark.svg" alt=""/>
+      </button>
+    </div>
+  </dialog>
+
+  <dialog id="contact-modal" class="content" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+    <div class="contact-modal-background" onclick="closeContactModal()" tabindex="-1"></div>  
+    <div id="contact-modal-container" aria-modal="true" tabindex="0">               
       <header>
-        <h2 id="modal-title">Contactez-moi<br></h2>
-        <img src="assets/icons/close.svg" onclick="closeModal()" />
+        <legend tabindex="0">
+          <h2 id="modal-title" class="form">Contactez-moi<br ></h2>
+          <h2 class="submission-success" tabindex="0">Merci !</h2>
+        </legend>
+        <button type="button" aria-label="Close contact form" onclick="closeContactModal()">
+          <img src="assets/icons/closeLight.svg" alt=""/>
+        </button>
       </header>
-      <form id="contact-form">
-        <div>
-          <label for="given-name">Prénom</label>
-          <input id="given-name" autocomplete="given-name" />
-        </div>
-        <div>
-          <label for="family-name">Nom</label>
-          <input id="family-name" autocomplete="family-name" />
-        </div>
-        <div>
-          <label for="email">Email</label>
-          <input id="email" autocomplete="email" />
-        </div>
-        <div>
-          <label for="message">Votre Message</label>
-          <textarea name="message" id="message" cols="" rows="10" autocomplete="off"></textarea>
-        </div>
-        <button class="contact_button">Envoyer</button>
+      <form class="form" id="contact-form" role="form" action="./photographer.html" method="get">
+        <fieldset class="form-fieldset">
+          <section role="group" aria-labelledby="given-name">
+            <label for="given-name">Prénom</label>
+            <input type="text" name="given-name" id="given-name" autocomplete="given-name" placeholder="Jean"/>
+          </section>
+          <section role="group" aria-labelledby="family-name">
+            <label for="family-name" >Nom</label>
+            <input type="text" name="family-name" id="family-name" autocomplete="family-name" placeholder="Dupont"/>
+          </section>
+          <section role="group" aria-labelledby="email">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" autocomplete="email" placeholder="pseudo@domain.com"/>
+          </section>
+          <section role="group" aria-labelledby="message">
+            <label for="message">Votre Message</label>
+            <textarea name="message" id="message" aria-labelledby="message" cols="30 rows="10" autocomplete="off" placeholder="Votre message"></textarea>
+          </section>
+        </fieldset>
+        <button type="submit" class="contact-button" value="Send" aria-label="Send" onclick="fetchForm()">Envoyer</button>
       </form>
     </div>
-  </div>
-  <header>
-    <a href="./index.html">
+  </dialog>
+
+  <header class="content" aria-hidden="false">
+    <a href="./index.html" tabindex="0" >
       <img src="assets/images/logo.png" class="logo" alt="Fisheye Home page" />
     </a>
   </header>
-  <main id="main">
+
+  <main id="main" class="content" aria-hidden="false">
     <div class="photograph-header">
-      <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+      <button class="contact-button" onclick="displayContactModal()">Contactez-moi</button>
+    </div>
+    <div id="filter-bar">
+      <label><p>Trier par</p>
+      <select name="Order by">
+        <option value="Popularité" selected>Popularité</option>
+        <option value="Date">Date</option>
+        <option value="Titre">Titre</option>
+      </select>
+    </label>
     </div>
     <div class="photograph-portfolio"></div>
   </main>
-  <footer id="footer">
+
+  <footer id="footer" class="content" aria-hidden="false">
     <p class="likes-footer"> <i class="fa-solid fa-heart"></i></p>
     <p class="pricetag-footer">€ / jour</p>
   </footer>

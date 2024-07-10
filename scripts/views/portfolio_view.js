@@ -6,7 +6,7 @@ function portfolioCardTemplate(mediaData, photographerName){
         // mediaObject.display()
         const media = document.createElement(mediaObject.element)
         media.className = mediaObject.class
-        media.setAttribute('src',mediaURL)
+        media.setAttribute('src', mediaURL)
 
         const mediaName = document.createElement('p');
         mediaName.innerText = mediaObject.title;
@@ -20,11 +20,15 @@ function portfolioCardTemplate(mediaData, photographerName){
         const card = document.createElement('article')
         card.className = 'card';
 
+        const anchor = document.createElement('a')
+        anchor.setAttribute('href',mediaURL)
+        anchor.append(media)
+
         const cardBody = document.createElement('div')
         cardBody.className = 'card-body'
         cardBody.append(mediaName, likesNumber)
 
-        card.append(media, cardBody)
+        card.append(anchor, cardBody)
         return card
     }
     return { getMediaCardDOM }

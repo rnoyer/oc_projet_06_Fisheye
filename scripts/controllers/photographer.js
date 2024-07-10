@@ -20,6 +20,7 @@ async function init() {
   
   // Récupère le nom du photographe
   const photographerName = await getPhotographerNameById(pathToData, photographerId)
+
   // Récupère les médias du photographe
   const MediaInfos = await getMediasDataById(pathToData, photographerId);
   
@@ -37,7 +38,6 @@ async function init() {
 //------------------//
 //   FORMULAIRE     //
 //------------------//
-
   displayNameInModal(photographerName)
 
 }

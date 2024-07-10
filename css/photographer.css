@@ -1,5 +1,18 @@
+fieldset {
+    all: unset;
+    width: 100%;
+}
+
+dialog {
+    all: unset;
+}
+
 h1 {
     margin: unset;
+}
+
+section {
+    all: unset;
 }
 
 p {
@@ -12,7 +25,8 @@ p {
     display: flex;
     justify-content:space-between;
     align-items: center;
-    background-color:  rgb(223, 167, 167);
+    background-color:  #FAFAFA;
+    border: solid #f7dbdb 1px;
     height: 300px;
     padding: 0 50px;
     gap: 50px;
@@ -46,7 +60,7 @@ p {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
-    margin-top: 100px;
+    margin-top: 50px;
     gap: 20px;
 }
 
@@ -95,18 +109,30 @@ footer p {
     font-weight: 500;
 }
 
-#contact_modal {
+#contact-modal, #lightbox-modal {
     z-index: 1;
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
-    display: none;
-    background: #C4C4C466;
     height: 100%;
     width: 100%;
+    overflow: auto;
 }
 
-.modal {
+.contact-modal-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #C4C4C466;
+    width: 100%;
+    height: 100%;
+}
+.submission-success {
+    display: none;
+}
+
+#contact-modal-container {
     position: relative;
     border-radius: 5px;
     background-color: #DB8876;
@@ -119,13 +145,37 @@ footer p {
     margin: 50px auto;
 }
 
-.modal header {
+#contact-modal-container header {
     justify-content: space-between;
     width: 100%;
     padding: 0 0 43px;
 }
 
-.contact_button {
+#filter-bar {
+    margin: 10px 0;
+}
+
+#filter-bar label p{
+    display: inline;
+    font-size: 18px;
+    font-weight: 700;
+    color: black;
+    margin-right: 20px;
+}
+
+#filter-bar select{
+    background-color: #901C1C;
+    font-family: "DM Sans", sans-serif;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 5px;
+    width: 170px;
+    height: 69px;
+    text-align: center;
+}
+
+.contact-button {
     font-size: 20px;
     font-weight: bold;
     color: white;
@@ -137,12 +187,19 @@ footer p {
     border-radius: 5px;
     cursor: pointer;
 }
+.contact-button:hover, .contact-button:focus, #filter-bar select:hover, #filter-bar select:focus{
+    color: black;
+    background-color: #DB8876;
+    border: solid black 4px;
+}
 
-.modal header img {
+#contact-modal-container header button {
+    border: unset;
+    background-color: unset;
     cursor: pointer;
 }
 
-.modal header h2 {
+#contact-modal-container header h2 {
     font-size: 64px;
     font-weight: normal;
     text-align:left;
@@ -170,7 +227,7 @@ form textarea {
     font-size: 36px;
 }
 
-form div {
+form section {
     display: flex;
     flex-direction: column;
     width: 100%;
