@@ -22,8 +22,8 @@ async function init() {
   const photographerName = await getPhotographerNameById(pathToData, photographerId)
 
   // Récupère les médias du photographe
-  const MediaInfos = await getMediasDataById(pathToData, photographerId);
-  
+  const MediaInfos = await getMediasDataByIdFilteredByPopularity(pathToData, photographerId);
+
   // Affiche le Portfolio
   displayPortfolio(photographerName, MediaInfos);
 

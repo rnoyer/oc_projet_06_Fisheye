@@ -29,6 +29,31 @@ async function getSumOfLikesById(path, id) {
 
 
 // Trier les photos par popularité
+async function getMediasDataByIdFilteredByPopularity(path, id){
+    const MediasToSort = await getMediasDataById(path, id)
+    const mediasFiltered = MediasToSort.sort((a,b) => b.likes - a.likes)
+    return mediasFiltered
+}
 // Trier les photos par Date
+async function getMediasDataByIdFilteredByDate(path, id){
+    const MediasToSort = await getMediasDataById(path, id)
+    const mediasFiltered = MediasToSort.sort((a,b) => a.date - b.date)
+    return mediasFiltered
+}
 // Trier les photos par Titre
+async function getMediasDataByIdFilteredByTitle(path, id){
+    const MediasToSort = await getMediasDataById(path, id)
+    const mediasFiltered = MediasToSort.sort((a, b) => {
+        const titleA = a.title.toUpperCase();
+        const titleB = b.title.toUpperCase();
+        if (titleA < titleB) {
+          return -1;
+        }
+        if (titleA > titleB) {
+          return 1;
+        }
+        return 0;
+      });
+    return mediasFiltered
+}
 
