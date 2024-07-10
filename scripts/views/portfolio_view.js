@@ -36,6 +36,7 @@ function portfolioCardTemplate(mediaData, photographerName){
 
 async function displayPortfolio(photographerName, mediasList) {
     const mediaSection = document.querySelector(".photograph-portfolio");
+    mediaSection.replaceChildren();
   
     mediasList.forEach((media) => {
         const mediaCard = portfolioCardTemplate(media, photographerName);

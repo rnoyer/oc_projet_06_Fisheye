@@ -22,10 +22,36 @@ async function init() {
   const photographerName = await getPhotographerNameById(pathToData, photographerId)
 
   // Récupère les médias du photographe
-  const MediaInfos = await getMediasDataByIdFilteredByPopularity(pathToData, photographerId);
+  let MediaInfos = await getMediasDataByIdFilteredByPopularity(pathToData, photographerId);
 
   // Affiche le Portfolio
   displayPortfolio(photographerName, MediaInfos);
+  console.log(MediaInfos)
+
+  // Ecouter et Récupérer les médias du photographe
+  async function updatePortfolio(filterSelected) {
+    switch (filterSelected) {
+      case 'Popularité':
+        MediaInfos = await getMediasDataByIdFilteredByPopularity(pathToData, photographerId);
+        displayPortfolio(photographerName, MediaInfos);
+        console.log(MediaInfos)
+        break;
+      case 'Date':
+        MediaInfos = await getMediasDataByIdFilteredByDate(pathToData, photographerId);
+        displayPortfolio(photographerName, MediaInfos);
+        console.log(MediaInfos)
+        break;
+      case 'Titre':
+        MediaInfos = await getMediasDataByIdFilteredByTitle(pathToData, photographerId);
+        displayPortfolio(photographerName, MediaInfos);
+        console.log(MediaInfos)
+        break;
+    }
+  }
+  const filterDOM = document.querySelector('.order-by');
+  filterDOM.addEventListener('change', (event) => {
+    updatePortfolio(event.target.value)
+  })
 
 //------------------//
 //     FOOTER       //
