@@ -18,6 +18,7 @@ class Media{
         this._title = data.title
         this._likes = data.likes
         this._thumbnail = 'thumbnail'
+        this._mediaId = data.id
     }
     get title() {
         return this._title
@@ -27,6 +28,9 @@ class Media{
     }
     get class(){
         return this._thumbnail
+    }
+    get mediaId(){
+        return this._mediaId
     }
 }
  class Image extends Media{
@@ -56,54 +60,3 @@ class Video extends Media{
         return this._element
     }
 }
-
-// class Image{
-//     constructor(data){
-//         this._title = data.title
-//         this._media = data.image
-//         this._likes = data.likes
-//         this._element = 'img'
-//         this._thumbnail = 'thumbnail'
-//     }
-//     get title() {
-//         return this._title
-//     }
-//     get media() {
-//         return this._media
-//     }
-//     get likes() {
-//         return this._likes
-//     }
-//     get element(){
-//         return this._element
-//     }
-//     get class(){
-//         return this._thumbnail
-//     }
-// }
-
-// class Video{
-//     constructor(data){
-//         this._title = data.title
-//         this._media = data.video
-//         this._likes = data.likes
-//         this._element = 'video'
-//         this._thumbnail = 'thumbnail'
-//     }
-
-//     get title() {
-//         return this._title
-//     }
-//     get media() {
-//         return this._media
-//     }
-//     get likes() {
-//         return this._likes
-//     }
-//     get element(){
-//         return this._element
-//     }
-//     get class(){
-//         return this._thumbnail
-//     }
-// }

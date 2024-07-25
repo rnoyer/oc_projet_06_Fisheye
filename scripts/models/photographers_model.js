@@ -5,7 +5,7 @@ async function getPhotographersData(path) {
     return photographers;
 }
 
-// Retourne l'ID d'un photographe
+// Retourne l'ID d'un photographe (contenu dans les params de l'URL)
 function getPhotographerQueriedId(){
     const params = new URLSearchParams(document.location.search);
     const userID = parseInt(params.get("id"), 10);

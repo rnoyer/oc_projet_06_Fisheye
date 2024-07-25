@@ -1,12 +1,11 @@
 function portfolioCardTemplate(mediaData, photographerName){
     const mediaObject = new MediaFactory(mediaData)
-    const mediaURL = `assets/Sample Photos/${photographerName}/${mediaObject.media}`
+    const mediaPath = `assets/Sample Photos/${photographerName}/${mediaObject.media}`
 
     function getMediaCardDOM(){
-        // mediaObject.display()
         const media = document.createElement(mediaObject.element)
         media.className = mediaObject.class
-        media.setAttribute('src', mediaURL)
+        media.setAttribute('src', mediaPath)
 
         const mediaName = document.createElement('p');
         mediaName.innerText = mediaObject.title;
@@ -18,10 +17,10 @@ function portfolioCardTemplate(mediaData, photographerName){
         likesNumber.append(mediaObject.likes,heartShape)
 
         const card = document.createElement('article')
+        card.setAttribute("id",mediaObject.mediaId)
         card.className = 'card';
 
         const anchor = document.createElement('a')
-        anchor.setAttribute('href',mediaURL)
         anchor.append(media)
 
         const cardBody = document.createElement('div')
@@ -42,5 +41,9 @@ async function displayPortfolio(photographerName, mediasList) {
         const mediaCard = portfolioCardTemplate(media, photographerName);
         const mediaCardDOM = mediaCard.getMediaCardDOM();
         mediaSection.appendChild(mediaCardDOM);
+        mediaCardDOM.addEventListener('click', (event) => {
+            currentPhotoID = parseInt(mediaCardDOM.getAttribute('id'), 10)
+            displayLightboxModal()
+        })
     });
   }

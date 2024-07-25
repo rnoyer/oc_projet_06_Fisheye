@@ -71,6 +71,10 @@ p {
     height: 350px;
 }
 
+.card a {
+    cursor: pointer;
+}
+
 .thumbnail {
     width: 350px;
     height: 300px;
@@ -109,7 +113,67 @@ footer p {
     font-weight: 500;
 }
 
-#contact-modal, #lightbox-modal {
+#lightbox-modal {
+    display: none;
+    z-index: 1;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+}
+
+#lightbox-modal-container {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    margin: 0 100px;
+    padding: 50px 0;
+    box-sizing: border-box;
+}
+
+.lightbox-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.lightbox-content img{
+    flex: 1;
+    object-fit: contain;
+    height:10%;
+}
+.lightbox-content video{
+    flex: 1;
+    width: 100%;
+    object-fit:contain;
+}
+.lightbox-content p {
+    padding: 10px 0;
+}
+
+.lightbox-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.close-lightbox {
+    margin-bottom: auto;
+}
+
+.side-button {
+padding: 20px;
+}
+
+.positional-div {
+    margin-top: auto;
+    min-height: 45px;
+}
+
+#contact-modal {
     z-index: 1;
     display: none;
     position: fixed;
@@ -193,7 +257,7 @@ footer p {
     border: solid black 4px;
 }
 
-#contact-modal-container header button {
+.modal-button {
     border: unset;
     background-color: unset;
     cursor: pointer;
