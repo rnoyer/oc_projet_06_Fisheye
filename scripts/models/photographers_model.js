@@ -16,7 +16,7 @@ function getPhotographerQueriedId () {
 async function getPhotographerDataById (path, id) {
   const data = await getPhotographersData(path)
   const photographerDataById = data.find((photographer) => photographer.id === id)
-  // TO DO : gérer les erreurs > find ne trouve pas l'ID
+
   return photographerDataById
 }
 

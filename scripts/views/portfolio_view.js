@@ -80,11 +80,13 @@ function toggleLike () {
     likesElement.innerText = likeNumber
     totalLikesElement.innerText = totalLikes + extraLikesdAdded
     likesElement.setAttribute('liked', 'true')
+    document.activeElement.classList.add('liked-button')
   } else {
     likeNumber--
     extraLikesdAdded--
     likesElement.innerText = likeNumber
     totalLikesElement.innerText = totalLikes + extraLikesdAdded
     likesElement.setAttribute('liked', 'false')
+    document.activeElement.classList.remove('liked-button')
   };
 }

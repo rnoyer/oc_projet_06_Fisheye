@@ -119,6 +119,10 @@ p, .like-button {
     transform: scale(1.2);
 }
 
+.liked-button {
+    color: #ba6868;
+}
+
 #footer {
     display: flex;
     justify-content: space-around;
