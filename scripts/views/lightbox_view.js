@@ -1,7 +1,7 @@
 function setLightboxContent (currentMediaObject) {
     const mediaObject = new MediaFactory(currentMediaObject)
   
-    const imageSource = `/assets/Sample%20Photos/${photographerName}/${mediaObject.media}`
+    const imageSource = `assets/Sample%20Photos/${photographerName}/${mediaObject.media}`
     const titleText = `${mediaObject.title}`
     const imageElement = document.createElement(mediaObject.element)
     imageElement.setAttribute('src', imageSource)
