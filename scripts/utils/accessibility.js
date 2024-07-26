@@ -19,10 +19,10 @@ document.addEventListener('keydown', (event) => {
     displayLightboxModal()
   }
   if (document.activeElement.getAttribute('onclick') === 'fetchForm()' && keyName === 'Tab') {
-    document.getElementById("contact-modal-container").focus();
+    document.getElementById('contact-modal-container').focus()
   }
   if (document.activeElement.getAttribute('onclick') === 'nextMedia()' && keyName === 'Tab') {
-    document.getElementById("lightbox-modal-container").focus();
+    document.getElementById('lightbox-modal-container').focus()
   }
 }, false)
 

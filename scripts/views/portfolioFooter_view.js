@@ -4,6 +4,6 @@ async function displayPortfolioFooter (likes, price) {
   totalLikes.append(likes)
   const priceTag = document.querySelector('.pricetag-footer')
   priceTag.insertAdjacentText('afterbegin', price)
-  const footer = document.getElementById("footer")
-  footer.setAttribute("aria-label",`${likes} likes. ${price} euros per day.`)
+  const footer = document.getElementById('footer')
+  footer.setAttribute('aria-label', `${likes} likes. ${price} euros per day.`)
 }
