@@ -12,7 +12,7 @@
 
 <body>
   <dialog id="lightbox-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title" tabindex="-1">
-    <div id="lightbox-modal-container">
+    <div id="lightbox-modal-container" tabindex="0" aria-label=”image closeup view”>
 
       <div class="lightbox-side previous-media">
         <button class="modal-button side-button" type="button" aria-label="Previous media" onclick="previousMedia()">
@@ -40,7 +40,7 @@
     <div class="contact-modal-background" onclick="closeContactModal()" tabindex="-1"></div>
     <div id="contact-modal-container" aria-modal="true" tabindex="0">
       <header>
-        <legend tabindex="0">
+        <legend tabindex="0" id="form-legend">
           <h2 id="modal-title" class="form">Contactez-moi<br></h2>
           <h2 class="submission-success" tabindex="0">Merci !</h2>
         </legend>
@@ -86,7 +86,7 @@
     </div>
     <div id="filter-bar">
       <label for="sort-photos">
-        <p>Trier par</p>
+        <p tabindex="0">Trier par</p>
         <select name="Order by" class="order-by" id="sort-photos">
           <option value="Popularité" selected>Popularité</option>
           <option value="Date">Date</option>
@@ -97,7 +97,7 @@
     <div class="photograph-portfolio"></div>
   </main>
 
-  <footer id="footer" class="content" aria-hidden="false">
+  <footer id="footer" class="content" aria-hidden="false" tabindex="0">
     <p class="likes-footer"> <span class="total-likes-number"></span> <span class="fa-solid fa-heart"></span></p>
     <p class="pricetag-footer">€ / jour</p>
   </footer>

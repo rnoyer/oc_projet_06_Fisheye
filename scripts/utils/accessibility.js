@@ -18,15 +18,13 @@ document.addEventListener('keydown', (event) => {
     currentPhotoID = parseInt(document.activeElement.parentElement.getAttribute('id'), 10)
     displayLightboxModal()
   }
+  if (document.activeElement.getAttribute('onclick') === 'fetchForm()' && keyName === 'Tab') {
+    document.getElementById("contact-modal-container").focus();
+  }
+  if (document.activeElement.getAttribute('onclick') === 'nextMedia()' && keyName === 'Tab') {
+    document.getElementById("lightbox-modal-container").focus();
+  }
 }, false)
-
-// function keepFocusInModal() {
-//     console.log('keepit!')
-// }
-
-// contentElements.forEach( (element) => {
-//     element.addEventListener("focus", keepFocusInModal(), false)
-// })
 
 function toggleAriaHidden (modalID) {
   const elementToDisable = [

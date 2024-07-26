@@ -5,7 +5,7 @@ function headerTemplate (data) {
     const picture = `assets/photographers/${portrait}`
     const img = document.createElement('img')
     img.setAttribute('src', picture)
-    img.setAttribute('alt', name)
+    img.setAttribute('aria-label', name)
     img.setAttribute('tabindex', '0')
 
     return (img)
