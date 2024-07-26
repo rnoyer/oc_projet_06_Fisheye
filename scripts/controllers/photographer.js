@@ -1,84 +1,82 @@
-const formModal = document.getElementById("contact-modal");
-const lightboxModal = document.getElementById("lightbox-modal");
-const lightboxContent = document.querySelector(".lightbox-content");
-const contentElements = document.querySelectorAll(".content");
-let MediaInfos = [];
-let photographerName = "";
+const formModal = document.getElementById('contact-modal')
+const lightboxModal = document.getElementById('lightbox-modal')
+const lightboxContent = document.querySelector('.lightbox-content')
+const contentElements = document.querySelectorAll('.content')
+let MediaInfos = []
+let photographerName = ''
 let currentPhotoID = 0
+let extraLikesdAdded = 0
+let totalLikes
 
-async function init() {
-//------------------------//
+async function init () {
+// ------------------------//
 //    PORTFOLIO HEADER    //
-//------------------------//
+// ------------------------//
 
   // Chemin vers les données json
-  const pathToData = "./data/photographers.json"
+  const pathToData = './data/photographers.json'
 
   // Récupère l'ID du photographe
   const photographerId = getPhotographerQueriedId()
 
   // Récupère les infos du photographe (avec le path vers le json et son ID)
-  const photographerInfos = await getPhotographerDataById(pathToData, photographerId);
+  const photographerInfos = await getPhotographerDataById(pathToData, photographerId)
 
   // Complète et hydrate le Header du Portfolio
-  displayPortfolioHeader(photographerInfos);
+  displayPortfolioHeader(photographerInfos)
 
-//------------------//
-//    PORTFOLIO     //
-//------------------//
-  
+  // ------------------//
+  //    PORTFOLIO     //
+  // ------------------//
+
   // Récupère le nom du photographe
   photographerName = await getPhotographerNameById(pathToData, photographerId)
 
   // Récupère les médias du photographe
-  MediaInfos = await getMediasDataByIdFilteredByPopularity(pathToData, photographerId);
+  MediaInfos = await getMediasDataByIdFilteredByPopularity(pathToData, photographerId)
 
   // Affiche le Portfolio
-  displayPortfolio(photographerName, MediaInfos);
+  displayPortfolio(photographerName, MediaInfos)
 
   // Ecoute le TRI et Update les MEDIAS du photographe
-  async function updatePortfolio(filterSelected) {
+  async function updatePortfolio (filterSelected) {
     switch (filterSelected) {
-        case 'Popularité':
-        MediaInfos = await getMediasDataByIdFilteredByPopularity(pathToData, photographerId);
-        displayPortfolio(photographerName, MediaInfos);
-        break;
-        case 'Date':
-        MediaInfos = await getMediasDataByIdFilteredByDate(pathToData, photographerId);
-        displayPortfolio(photographerName, MediaInfos);
-        break;
-        case 'Titre':
-        MediaInfos = await getMediasDataByIdFilteredByTitle(pathToData, photographerId);
-        displayPortfolio(photographerName, MediaInfos);
-        break;
+      case 'Popularité':
+        MediaInfos = await getMediasDataByIdFilteredByPopularity(pathToData, photographerId)
+        displayPortfolio(photographerName, MediaInfos)
+        break
+      case 'Date':
+        MediaInfos = await getMediasDataByIdFilteredByDate(pathToData, photographerId)
+        displayPortfolio(photographerName, MediaInfos)
+        break
+      case 'Titre':
+        MediaInfos = await getMediasDataByIdFilteredByTitle(pathToData, photographerId)
+        displayPortfolio(photographerName, MediaInfos)
+        break
     }
   }
 
-const filterDOM = document.querySelector('.order-by');
-filterDOM.addEventListener('change', (event) => {
-  updatePortfolio(event.target.value)
-})
+  const filterDOM = document.querySelector('.order-by')
+  filterDOM.addEventListener('change', (event) => {
+    updatePortfolio(event.target.value)
+  })
 
-//--------------------//
-//     LIGHTBOX       //
-//--------------------//
+  // --------------------//
+  //     LIGHTBOX       //
+  // --------------------//
 
+  // ------------------//
+  //     FOOTER       //
+  // ------------------//
 
-
-
-
-//------------------//
-//     FOOTER       //
-//------------------//
-
-  const likes = await getSumOfLikesById(pathToData, photographerId)
+  totalLikes = await getSumOfLikesById(pathToData, photographerId)
   const price = await getPriceById(pathToData, photographerId)
-  displayPortfolioFooter(likes,price)
+  displayPortfolioFooter(totalLikes, price)
 
-//------------------//
-//   FORMULAIRE     //
-//------------------//
+  // ------------------//
+  //   FORMULAIRE     //
+  // ------------------//
   displayNameInModal(photographerName)
 }
 
-init();
+init()

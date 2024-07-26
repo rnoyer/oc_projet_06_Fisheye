@@ -15,7 +15,7 @@ section {
     all: unset;
 }
 
-p {
+p, .like-button {
     color: #901C1C;
     font-size: 24px;
     margin: 0;
@@ -88,10 +88,35 @@ p {
     margin: auto 0;
 }
 
-.likes{
+.card-media {
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.card-media .thumbnail{
+    transition: transform 0.2s;
+}
+
+.card-media:hover .thumbnail, .card-media:focus-visible .thumbnail{
+    transform: scale(1.1);
+}
+
+.like-section{
     display: flex;
     gap: 5px;
     align-items: baseline;
+}
+
+.like-button {
+    border: unset;
+    background: unset;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.like-button:hover, .like-button:focus-visible {
+    color: #ba6868;
+    transform: scale(1.2);
 }
 
 #footer {
@@ -251,7 +276,7 @@ padding: 20px;
     border-radius: 5px;
     cursor: pointer;
 }
-.contact-button:hover, .contact-button:focus, #filter-bar select:hover, #filter-bar select:focus{
+.contact-button:hover, .contact-button:focus-visible, #filter-bar select:hover, #filter-bar select:focus-visible{
     color: black;
     background-color: #DB8876;
     border: solid black 4px;
