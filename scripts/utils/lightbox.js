@@ -1,7 +1,3 @@
-const lightboxModal = document.getElementById("lightbox-modal");
-const lightboxContent = document.querySelector(".lightbox-content");
-let currentPhotoID = 0
-
 function displayLightboxModal() {
     const clickedMediaObject = MediaInfos.find(({ id }) => id === currentPhotoID)
 
@@ -9,7 +5,6 @@ function displayLightboxModal() {
 	lightboxModal.style.display = "block";
     toggleAriaHidden("lightbox-modal")
     lightboxModal.focus()
-
 }
 
 function closeLightboxModal() {
@@ -34,7 +29,6 @@ function setLightboxContent(currentMediaObject) {
 function unsetLightboxContent() {
     lightboxContent.innerHTML=""
 }
-
 
 function nextMedia() {
     const maxIndex = MediaInfos.length

@@ -1,5 +1,3 @@
-const formModal = document.getElementById("contact-modal");
-
 function displayContactModal() {
   const form = document.getElementById("contact-modal-container");
   formModal.style.display = "block";
@@ -37,26 +35,3 @@ function fetchForm() {
 
   displaySubmittedContactModal();
 }
-
-function toggleAriaHidden(modalID) {
-  const elementToDisable = [
-    ...document.querySelectorAll(".content"),
-    document.getElementById(modalID),
-  ];
-  elementToDisable.forEach((element) => {
-    element.getAttribute("aria-hidden") === "false"
-      ? element.setAttribute("aria-hidden", "true")
-      : element.setAttribute("aria-hidden", "false");
-  });
-}
-
-document.addEventListener("keydown",(event) => {
-      const keyName = event.key;
-      const ariaAttribute = formModal.getAttribute("aria-hidden");
-  
-      if (ariaAttribute ==="false" && keyName === "Escape") {
-        closeContactModal();
-      }
-    },
-    false,
-  );

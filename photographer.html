@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
   <link href="css/style.css" rel="stylesheet" type="text/css" />
@@ -85,9 +85,9 @@
       <button class="contact-button" onclick="displayContactModal()">Contactez-moi</button>
     </div>
     <div id="filter-bar">
-      <label>
+      <label for="sort-photos">
         <p>Trier par</p>
-        <select name="Order by" class="order-by">
+        <select name="Order by" class="order-by" id="sort-photos">
           <option value="Popularité" selected>Popularité</option>
           <option value="Date">Date</option>
           <option value="Titre">Titre</option>
@@ -98,7 +98,7 @@
   </main>
 
   <footer id="footer" class="content" aria-hidden="false">
-    <p class="likes-footer"> <i class="fa-solid fa-heart"></i></p>
+    <p class="likes-footer"> <span class="fa-solid fa-heart"></span></p>
     <p class="pricetag-footer">€ / jour</p>
   </footer>
 
@@ -117,9 +117,9 @@
   <script src="./scripts/views/portfolio_view.js"></script>
   <script src="./scripts/views/portfolioFooter_view.js"></script>
   <script src="./scripts/views/modal_view.js"></script>
-  <script src="./scripts/views/lightbox_view.js"></script>
 
   <!-- Plugins -->
+  <script src="./scripts/utils/accessibility.js"></script>
   <script src="./scripts/utils/contactForm.js"></script>
   <script src="./scripts/utils/lightbox.js"></script>
 

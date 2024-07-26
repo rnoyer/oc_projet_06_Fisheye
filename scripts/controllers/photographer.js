@@ -1,5 +1,10 @@
+const formModal = document.getElementById("contact-modal");
+const lightboxModal = document.getElementById("lightbox-modal");
+const lightboxContent = document.querySelector(".lightbox-content");
+const contentElements = document.querySelectorAll(".content");
 let MediaInfos = [];
 let photographerName = "";
+let currentPhotoID = 0
 
 async function init() {
 //------------------------//
