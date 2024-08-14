@@ -68,6 +68,7 @@ async function displayPortfolio (photographerName, mediasList) {
   })
 }
 
+// Gère l'ajout d'un like par l'utilisateur.
 function toggleLike () {
   const likesElement = document.activeElement.previousSibling
   const totalLikesElement = document.querySelector('.total-likes-number')

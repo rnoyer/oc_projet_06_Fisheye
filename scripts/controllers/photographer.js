@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 const formModal = document.getElementById('contact-modal')
 const lightboxModal = document.getElementById('lightbox-modal')
 const lightboxContent = document.querySelector('.lightbox-content')

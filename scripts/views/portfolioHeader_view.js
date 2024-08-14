@@ -33,7 +33,6 @@ function headerTemplate (data) {
   return { getUserPictureDOM, getUserInfosDOM }
 }
 
-// Mettre le code JavaScript lié à la page photographer.html
 function displayPortfolioHeader (photographInfosHeader) {
   const photographersSection = document.querySelector('.photograph-header')
 

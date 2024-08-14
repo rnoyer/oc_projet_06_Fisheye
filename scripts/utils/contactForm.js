@@ -22,12 +22,13 @@ function displaySubmittedContactModal () {
   submittedMessage.focus()
 }
 
-function fetchForm () {
-  const form = document.querySelector('form')
-  form.addEventListener('submit', (event) => {
-    event.preventDefault()
-  })
+// Listener pour empêcher l'execution par default de l'instruction 'submit'
+const form = document.querySelector('form')
+form.addEventListener('submit', (event) => {
+  event.preventDefault()
+})
 
+function fetchForm () {
   const formFields = document.querySelectorAll('input,textarea')
   formFields.forEach((input) => {
     console.log(`${input.name}: ${input.value}`)
